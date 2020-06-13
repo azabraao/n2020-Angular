@@ -19,12 +19,13 @@
             <div class="form-group">
               <input
                 class="input"
-                formControlName="email"
+                formControlName="username"
                 type="text"
-                placeholder="Número ou e-mail"
+                (change)="resetFeedback()"
+                placeholder="Username"
               />
-              <small *ngIf="getFieldError('email')" class="error">{{
-                getFieldError("email")
+              <small *ngIf="getFieldError('username')" class="error">{{
+                getFieldError("username")
               }}</small>
             </div>
             <div class="form-group">
@@ -32,6 +33,7 @@
                 class="input"
                 type="password"
                 placeholder="Senha"
+                (change)="resetFeedback()"
                 formControlName="password"
               />
               <small *ngIf="getFieldError('password')" class="error">{{

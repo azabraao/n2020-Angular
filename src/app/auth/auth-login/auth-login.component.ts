@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { AuthService } from "src/app/services/auth.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-auth-login",
@@ -11,9 +13,9 @@ export class AuthLoginComponent implements OnInit {
   public data: any = {};
   public formFeedback: string = "";
 
-  constructor() {
+  constructor(private authService: AuthService, private router: Router) {
     this.loginForm = new FormGroup({
-      email: new FormControl("", [Validators.required, Validators.email]),
+      username: new FormControl("", [Validators.required]),
       password: new FormControl("", [
         Validators.required,
         Validators.minLength(6),
@@ -29,14 +31,32 @@ export class AuthLoginComponent implements OnInit {
     console.log(formValue);
 
     if (!this.loginForm.valid) {
-      alert("Preencha os campos corretamente.");
-
+      console.log("form invalid");
       return;
     } else {
-      alert("sem erros");
+      try {
+        let formValue = this.loginForm.value;
+        let res = await this.authService.login(formValue);
+
+        this.authService.setLoggedUser(res.token, res.user);
+        console.log("res.data", res);
+
+        if (res.erro) {
+          this.formFeedback = res.erro.message;
+        }
+
+        this.router.navigate(["/"]);
+      } catch (error) {
+        console.error(error);
+        this.formFeedback = "Credenciais negadas";
+      }
     }
 
     console.log(this.loginForm.value);
+  }
+
+  resetFeedback() {
+    this.formFeedback = "";
   }
 
   getFieldError(formControlName) {
