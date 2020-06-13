@@ -15,10 +15,33 @@
           <h1>Login</h1>
         </div>
         <div class="login__body">
-          <form class="form">
-            <input class="input" type="text" placeholder="Número ou e-mail" />
-            <input class="input" type="text" placeholder="Senha" />
-            <button class="button">
+          <form [formGroup]="loginForm" class="form">
+            <div class="form-group">
+              <input
+                class="input"
+                formControlName="email"
+                type="text"
+                placeholder="Número ou e-mail"
+              />
+              <small *ngIf="getFieldError('email')" class="error">{{
+                getFieldError("email")
+              }}</small>
+            </div>
+            <div class="form-group">
+              <input
+                class="input"
+                type="password"
+                placeholder="Senha"
+                formControlName="password"
+              />
+              <small *ngIf="getFieldError('password')" class="error">{{
+                getFieldError("password")
+              }}</small>
+            </div>
+            <div *ngIf="formFeedback" class="form__feedback">
+              {{ formFeedback }}
+            </div>
+            <button class="button" (click)="sendLogin()">
               Entrar
             </button>
           </form>
