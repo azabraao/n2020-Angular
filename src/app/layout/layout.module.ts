@@ -6,6 +6,7 @@ import { RouterModule } from "@angular/router";
 import { HomeComponent } from "./home/home.component";
 import { NovoVideoComponent } from "./novo-video/novo-video.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { CursosComponent } from './cursos/cursos.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     NavbarComponent,
     HomeComponent,
     NovoVideoComponent,
+    CursosComponent,
   ],
   imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
 })
