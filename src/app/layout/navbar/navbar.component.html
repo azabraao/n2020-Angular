@@ -1,0 +1,27 @@
+<nav *ngIf="isLogged" class="navbar">
+  <div class="container">
+    <div class="navbar__inside">
+      <div class="navbar__arrow-back">
+        <img src="assets/images/arrow-back.svg" alt="Voltar" />
+      </div>
+      <div class="navbar__hamburguer" (click)="handleMenuClick()">
+        <img src="assets/images/hamburguer.svg" alt="Menu" />
+      </div>
+      <div class="navbar__menu" [ngClass]="menuAtivo ? 'active' : ''">
+        <div class="menu">
+          <div class="menu__logo">
+            ComoUSA
+          </div>
+          <div class="menu__sair">
+            <button class="button">
+              <img src="assets/images/arrow-back-white.svg" alt="voltar" />
+              <span>
+                Sair
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,16 +1,23 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { AuthLoginComponent } from "./auth/auth-login/auth-login.component";
-import { AppComponent } from "./app.component";
+import { InsideLayoutComponent } from "./layout/inside-layout/inside-layout.component";
+import { HomeComponent } from "./layout/home/home.component";
 
 const routes: Routes = [
   {
-    path: "",
-    component: AppComponent,
-  },
-  {
     path: "login",
     component: AuthLoginComponent,
+  },
+  {
+    path: "",
+    component: InsideLayoutComponent,
+    children: [
+      {
+        path: "",
+        component: HomeComponent,
+      },
+    ],
   },
 ];
 
