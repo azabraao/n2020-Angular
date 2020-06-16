@@ -1,1 +1,54 @@
-<p>novo-video works!</p>
+<div class="novo-video-page">
+  <header class="novo-video-page__header">
+    <div class="container">
+      <div class="novo-video-header__inside">
+        <div class="novo-video-header__logo">
+          ComoUSA
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="novo-video">
+    <div class="container">
+      <div class="novo-video__inside">
+        <div class="novo-video__header">
+          <h1>Insira um novo vídeo</h1>
+        </div>
+        <div class="novo-video__body">
+          <form [formGroup]="novoVideoForm" class="form">
+            <div class="form-group">
+              <input
+                class="input"
+                formControlName="link"
+                type="text"
+                (change)="resetFeedback()"
+                placeholder="Insira link"
+              />
+              <small *ngIf="getFieldError('link')" class="error">{{
+                getFieldError("link")
+              }}</small>
+            </div>
+            <div class="form-group">
+              <input
+                class="input"
+                type="titulo"
+                placeholder="Senha"
+                (change)="resetFeedback()"
+                formControlName="titulo"
+              />
+              <small *ngIf="getFieldError('titulo')" class="error">{{
+                getFieldError("password")
+              }}</small>
+            </div>
+            <div *ngIf="formFeedback" class="form__feedback">
+              {{ formFeedback }}
+            </div>
+            <button class="button" (click)="sendVideo()">
+              Salvar
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
