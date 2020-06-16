@@ -7,6 +7,7 @@ import { AppRoutingModule } from "./app.routing.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule } from "@angular/common/http";
 import { LayoutModule } from "./layout/layout.module";
+import { AuthGuard } from "./services/auth.guard";
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +19,7 @@ import { LayoutModule } from "./layout/layout.module";
     BrowserAnimationsModule,
     LayoutModule,
   ],
+  providers: [AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
