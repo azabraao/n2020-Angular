@@ -8,10 +8,15 @@ import { Component, OnInit } from "@angular/core";
 export class NavbarComponent implements OnInit {
   public menuAtivo: boolean = false;
   public isLogged: boolean = !!localStorage.loggedUser;
+  public backToHome: boolean = false;
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (window.location.pathname !== "/") {
+      this.backToHome = true;
+    }
+  }
 
   handleMenuClick() {
     this.menuAtivo === true

@@ -2,7 +2,9 @@
   <div class="container">
     <div class="navbar__inside">
       <div class="navbar__arrow-back">
-        <img src="assets/images/arrow-back.svg" alt="Voltar" />
+        <a *ngIf="backToHome" href="/">
+          <img src="assets/images/arrow-back.svg" alt="Voltar" />
+        </a>
       </div>
       <div class="navbar__hamburguer" (click)="handleMenuClick()">
         <img src="assets/images/hamburguer.svg" alt="Menu" />
