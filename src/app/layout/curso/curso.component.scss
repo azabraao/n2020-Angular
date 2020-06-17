@@ -1,0 +1,34 @@
+.curso {
+  padding-top: 54px;
+  padding-bottom: 60px;
+
+  .curso__video {
+    iframe {
+      width: 100%;
+
+      @media only screen and (min-width: 1200px) {
+        width: 800px;
+        height: 400px;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+  }
+  .curso__titulo {
+    padding-top: 25px;
+    text-align: center;
+
+    h1 {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 21px;
+      color: #000000;
+
+      @media only screen and (min-width: 1200px) {
+        font-size: 20px;
+      }
+    }
+  }
+}

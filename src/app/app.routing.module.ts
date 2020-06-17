@@ -5,6 +5,7 @@ import { InsideLayoutComponent } from "./layout/inside-layout/inside-layout.comp
 import { HomeComponent } from "./layout/home/home.component";
 import { NovoVideoComponent } from "./layout/novo-video/novo-video.component";
 import { AuthGuard } from "./services/auth.guard";
+import { CursoComponent } from "./layout/curso/curso.component";
 
 const routes: Routes = [
   {
@@ -24,6 +25,10 @@ const routes: Routes = [
       {
         path: "",
         component: HomeComponent,
+      },
+      {
+        path: "curso",
+        component: CursoComponent,
       },
     ],
   },
