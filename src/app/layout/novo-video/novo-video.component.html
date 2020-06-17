@@ -16,6 +16,22 @@
         </div>
         <div class="novo-video__body">
           <form [formGroup]="novoVideoForm" class="form">
+            <div
+              class="add-image jsAddImagem"
+              (click)="handleAddImageClick()"
+              tabindex="0"
+            >
+              <input
+                type="file"
+                (change)="handleImageChange($event)"
+                class="add-image-file-input jsInputUploadImagem"
+                id=""
+                accept="image/*"
+              />
+              <div *ngIf="!foto" class="add-image__title jsImageTitle">
+                <p>Clique para inserir uma imagem</p>
+              </div>
+            </div>
             <div class="form-group">
               <input
                 class="input"

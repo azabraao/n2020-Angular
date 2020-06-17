@@ -12,6 +12,7 @@ export class NovoVideoComponent implements OnInit {
   public novoVideoForm: FormGroup;
   public data: any = {};
   public formFeedback: string = "";
+  public foto: string = "";
 
   constructor(private authService: AuthService, private router: Router) {
     this.novoVideoForm = new FormGroup({
@@ -24,6 +25,28 @@ export class NovoVideoComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  handleAddImageClick() {
+    // console.log("clicked");
+    // console.log(this.foto);
+    document.querySelector(".jsInputUploadImagem").click();
+  }
+
+  handleImageChange(event) {
+    var input = event.target;
+    var reader = new FileReader();
+    reader.onload = function () {
+      let dataURL = reader.result;
+      // this.foto = dataURL;
+      console.log(dataURL);
+      document.querySelector(
+        ".jsAddImagem"
+      ).style.backgroundImage = `url(${dataURL})`;
+      document.querySelector(".jsImageTitle").style.display = "none";
+    };
+    reader.readAsDataURL(input.files[0]);
+    // capaMissao.ativa();
+  }
 
   async sendVideo() {
     let formValue = this.novoVideoForm.value;
