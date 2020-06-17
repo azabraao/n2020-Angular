@@ -38,7 +38,7 @@
                 formControlName="link"
                 type="text"
                 (change)="resetFeedback()"
-                placeholder="Insira link"
+                placeholder="Insira um link"
               />
               <small *ngIf="getFieldError('link')" class="error">{{
                 getFieldError("link")
@@ -48,7 +48,7 @@
               <input
                 class="input"
                 type="titulo"
-                placeholder="Senha"
+                placeholder="Título"
                 (change)="resetFeedback()"
                 formControlName="titulo"
               />
@@ -59,7 +59,15 @@
             <div *ngIf="formFeedback" class="form__feedback">
               {{ formFeedback }}
             </div>
-            <button class="button" (click)="sendVideo()">
+            <button
+              disabled
+              *ngIf="isLoading"
+              class="button"
+              (click)="sendVideo()"
+            >
+              Salvando...
+            </button>
+            <button *ngIf="!isLoading" class="button" (click)="sendVideo()">
               Salvar
             </button>
           </form>
