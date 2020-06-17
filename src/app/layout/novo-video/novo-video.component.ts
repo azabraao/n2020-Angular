@@ -37,8 +37,6 @@ export class NovoVideoComponent implements OnInit {
     var reader = new FileReader();
     reader.onload = function () {
       let dataURL = reader.result;
-      // this.foto = dataURL;
-      console.log(dataURL);
       let imageBox = document.querySelector(".jsAddImagem") as HTMLElement;
       imageBox.style.backgroundImage = `url(${dataURL})`;
 
