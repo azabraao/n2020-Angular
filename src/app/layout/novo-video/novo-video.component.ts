@@ -39,10 +39,11 @@ export class NovoVideoComponent implements OnInit {
       let dataURL = reader.result;
       // this.foto = dataURL;
       console.log(dataURL);
-      document.querySelector(
-        ".jsAddImagem"
-      ).style.backgroundImage = `url(${dataURL})`;
-      document.querySelector(".jsImageTitle").style.display = "none";
+      let imageBox = document.querySelector(".jsAddImagem") as HTMLElement;
+      imageBox.style.backgroundImage = `url(${dataURL})`;
+
+      let imageTitle = document.querySelector(".jsImageTitle") as HTMLElement;
+      imageTitle.style.display = "none";
     };
     reader.readAsDataURL(input.files[0]);
     // capaMissao.ativa();
