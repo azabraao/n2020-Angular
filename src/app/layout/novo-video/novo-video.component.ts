@@ -55,6 +55,12 @@ export class NovoVideoComponent implements OnInit {
     reader.readAsDataURL(input.files[0]);
   }
 
+  getYoutubeId(url) {
+    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+    var match = url.match(regExp);
+    return match && match[7].length == 11 ? match[7] : false;
+  }
+
   async sendVideo() {
     if (!this.novoVideoForm.valid) {
       console.log("form invalid");
@@ -63,6 +69,7 @@ export class NovoVideoComponent implements OnInit {
       try {
         this.isLoading = true;
         let formValue = this.novoVideoForm.value;
+        formValue.link = this.getYoutubeId(formValue.link);
         formValue.imagem = this.foto;
         let res = await this.cursoService.createCurso(formValue);
 
