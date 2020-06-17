@@ -4,46 +4,18 @@
       <h1>Cursos</h1>
     </div>
     <div class="cursos__body">
-      <a href="/cursos" class="curso">
-        <div class="curso__cover"></div>
+      <a
+        *ngFor="let curso of cursos"
+        href="/curso/{{ curso.link }}"
+        class="curso"
+      >
+        <div
+          class="curso__cover"
+          [style.backgroundImage]="'url(' + curso.imagem + ')'"
+        ></div>
         <div class="curso__title">
           <img src="assets/images/play.svg" alt="Play" />
-          <h2>Aprenda a usar o Whatsapp</h2>
-        </div>
-      </a>
-      <a href="/cursos" class="curso">
-        <div class="curso__cover"></div>
-        <div class="curso__title">
-          <img src="assets/images/play.svg" alt="Play" />
-          <h2>Aprenda a usar o Whatsapp</h2>
-        </div>
-      </a>
-      <a href="/cursos" class="curso">
-        <div class="curso__cover"></div>
-        <div class="curso__title">
-          <img src="assets/images/play.svg" alt="Play" />
-          <h2>Aprenda a usar o Whatsapp</h2>
-        </div>
-      </a>
-      <a href="/cursos" class="curso">
-        <div class="curso__cover"></div>
-        <div class="curso__title">
-          <img src="assets/images/play.svg" alt="Play" />
-          <h2>Aprenda a usar o Whatsapp</h2>
-        </div>
-      </a>
-      <a href="/cursos" class="curso">
-        <div class="curso__cover"></div>
-        <div class="curso__title">
-          <img src="assets/images/play.svg" alt="Play" />
-          <h2>Aprenda a usar o Whatsapp</h2>
-        </div>
-      </a>
-      <a href="/cursos" class="curso">
-        <div class="curso__cover"></div>
-        <div class="curso__title">
-          <img src="assets/images/play.svg" alt="Play" />
-          <h2>Aprenda a usar o Whatsapp</h2>
+          <h2>{{ curso.titulo }}</h2>
         </div>
       </a>
     </div>
