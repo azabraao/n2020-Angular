@@ -18,6 +18,8 @@ export class CursoComponent implements OnInit {
 
     window.addEventListener("resize", this.resizeVideo);
 
+    localStorage.videoId = this.route.snapshot.params.url;
+
     this.youtubeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
       `https://www.youtube.com/embed/${this.route.snapshot.params.url}`
     );

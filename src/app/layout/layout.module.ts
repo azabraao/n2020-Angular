@@ -8,6 +8,7 @@ import { NovoVideoComponent } from "./novo-video/novo-video.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CursosComponent } from './cursos/cursos.component';
 import { CursoComponent } from './curso/curso.component';
+import { BottomNavComponent } from './bottom-nav/bottom-nav.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CursoComponent } from './curso/curso.component';
     NovoVideoComponent,
     CursosComponent,
     CursoComponent,
+    BottomNavComponent,
   ],
   imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
 })
