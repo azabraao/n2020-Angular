@@ -24,7 +24,7 @@ export class CursoComponent implements OnInit {
   }
   resizeVideo() {
     if (window.innerWidth < 1200) {
-      let iframe = document.querySelector(".jsVideoCurso");
+      let iframe = document.querySelector(".jsVideoCurso") as HTMLElement;
       iframe.style.height = window.innerWidth / 2 + "px";
     }
   }

@@ -5,7 +5,7 @@ import { HttpClient } from "@angular/common/http";
   providedIn: "root",
 })
 export class AuthService {
-  private apiUrl: string = "http://localhost:3333";
+  private apiUrl: string = "https://como-usa-backend.herokuapp.com";
 
   constructor(private httpClient: HttpClient) {}
 
@@ -17,7 +17,7 @@ export class AuthService {
   setLoggedUser(token, user) {
     try {
       token = JSON.stringify(token);
-      localStorage.setItem("loggedUser", token);
+      localStorage.setItem("userToken", `Bearer ${token}`);
       user = JSON.stringify(user);
       localStorage.setItem("loggedUser", user);
     } catch (error) {
