@@ -27,7 +27,7 @@ const routes: Routes = [
         component: HomeComponent,
       },
       {
-        path: "curso/:url",
+        path: "curso/:url/:titulo",
         component: CursoComponent,
       },
     ],

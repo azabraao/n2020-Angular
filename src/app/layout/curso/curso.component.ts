@@ -10,6 +10,7 @@ import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 export class CursoComponent implements OnInit {
   public videoHeight: number = 200;
   public youtubeUrl: any = "";
+  public titulo: string = "";
 
   constructor(private route: ActivatedRoute, public sanitizer: DomSanitizer) {}
 
@@ -20,6 +21,7 @@ export class CursoComponent implements OnInit {
 
     localStorage.videoId = this.route.snapshot.params.url;
 
+    this.titulo = this.route.snapshot.params.titulo;
     this.youtubeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
       `https://www.youtube.com/embed/${this.route.snapshot.params.url}`
     );

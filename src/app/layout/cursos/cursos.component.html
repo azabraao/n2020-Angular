@@ -6,7 +6,7 @@
     <div class="cursos__body">
       <a
         *ngFor="let curso of cursos"
-        href="/curso/{{ curso.link }}"
+        href="/curso/{{ curso.link }}/{{ curso.titulo }}"
         class="curso"
       >
         <div
