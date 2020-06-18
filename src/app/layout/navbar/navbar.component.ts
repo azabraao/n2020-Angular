@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { AuthService } from "src/app/services/auth.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-navbar",
@@ -10,7 +12,7 @@ export class NavbarComponent implements OnInit {
   public isLogged: boolean = !!localStorage.loggedUser;
   public backToHome: boolean = false;
 
-  constructor() {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {
     if (window.location.pathname !== "/") {
@@ -22,5 +24,10 @@ export class NavbarComponent implements OnInit {
     this.menuAtivo === true
       ? (this.menuAtivo = false)
       : (this.menuAtivo = true);
+  }
+
+  logout() {
+    this.authService.clearStorage();
+    this.router.navigate(["/login"]);
   }
 }
