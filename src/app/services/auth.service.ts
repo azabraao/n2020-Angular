@@ -16,7 +16,6 @@ export class AuthService {
 
   setLoggedUser(token, user) {
     try {
-      token = JSON.stringify(token);
       localStorage.setItem("userToken", `Bearer ${token}`);
       user = JSON.stringify(user);
       localStorage.setItem("loggedUser", user);

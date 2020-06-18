@@ -39,7 +39,6 @@ export class AuthLoginComponent implements OnInit {
         let res = await this.authService.login(formValue);
 
         this.authService.setLoggedUser(res.token, res.user);
-        console.log("res.data", res);
 
         if (res.erro) {
           this.formFeedback = res.erro.message;
