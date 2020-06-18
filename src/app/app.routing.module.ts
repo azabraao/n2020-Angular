@@ -9,7 +9,7 @@ import { CursoComponent } from "./layout/curso/curso.component";
 
 const routes: Routes = [
   {
-    path: "login",
+    path: "admin",
     component: AuthLoginComponent,
   },
   {

@@ -28,6 +28,6 @@ export class NavbarComponent implements OnInit {
 
   logout() {
     this.authService.clearStorage();
-    this.router.navigate(["/login"]);
+    this.router.navigate(["/admin"]);
   }
 }

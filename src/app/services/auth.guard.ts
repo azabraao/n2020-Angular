@@ -22,7 +22,7 @@ export class AuthGuard implements CanActivate {
       return true;
     } else {
       console.log("Error 401");
-      this.router.navigate(["/login"]);
+      this.router.navigate(["/admin"]);
       return false;
     }
   }
