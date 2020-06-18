@@ -71,13 +71,12 @@ export class NovoVideoComponent implements OnInit {
         let formValue = this.novoVideoForm.value;
         formValue.link = this.getYoutubeId(formValue.link);
         formValue.imagem = this.foto;
-        let res = await this.cursoService.createCurso(formValue);
-
-        console.log("res", res);
-
-        if (res.success) {
-          alert(res.success.message);
-        }
+        this.cursoService
+          .createCurso(formValue)
+          .then((res) => {
+            alert("Cadastro realizado com sucesso");
+          })
+          .catch(console.error);
 
         this.isLoading = false;
       } catch (error) {
