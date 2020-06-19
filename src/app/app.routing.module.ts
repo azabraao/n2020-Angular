@@ -3,7 +3,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { AuthLoginComponent } from "./auth/auth-login/auth-login.component";
 import { InsideLayoutComponent } from "./layout/inside-layout/inside-layout.component";
 import { HomeComponent } from "./layout/home/home.component";
-import { NovoVideoComponent } from "./layout/novo-video/novo-video.component";
+import { NovoCursoComponent } from "./layout/novo-curso/novo-curso.component";
 import { AuthGuard } from "./services/auth.guard";
 import { CursoComponent } from "./layout/curso/curso.component";
 import { EditarVideoComponent } from "./layout/editar-video/editar-video.component";
@@ -14,9 +14,9 @@ const routes: Routes = [
     component: AuthLoginComponent,
   },
   {
-    path: "novo-video",
+    path: "novo-curso",
     canActivate: [AuthGuard],
-    component: NovoVideoComponent,
+    component: NovoCursoComponent,
   },
   {
     path: "editar-video/:id",

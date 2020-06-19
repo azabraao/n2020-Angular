@@ -4,11 +4,11 @@ import { Router } from "@angular/router";
 import { CursoService } from "src/app/services/curso.service";
 
 @Component({
-  selector: "app-novo-video",
-  templateUrl: "./novo-video.component.html",
-  styleUrls: ["./novo-video.component.scss"],
+  selector: "app-novo-curso",
+  templateUrl: "./novo-curso.component.html",
+  styleUrls: ["./novo-curso.component.scss"],
 })
-export class NovoVideoComponent implements OnInit {
+export class NovoCursoComponent implements OnInit {
   public novoVideoForm: FormGroup;
   public data: any = {};
   public formFeedback: string = "";

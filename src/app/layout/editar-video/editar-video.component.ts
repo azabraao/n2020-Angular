@@ -31,7 +31,15 @@ export class EditarVideoComponent implements OnInit {
 
   async ngOnInit() {
     this.idCurso = this.route.snapshot.params.id;
-    let curso = await this.cursoService.getCurso(this.idCurso);
+
+    let curso: any = {
+      imagem: "",
+      titulo: "",
+      link: "",
+    };
+
+    curso = await this.cursoService.getCurso(this.idCurso);
+
     this.foto = curso.imagem;
     this.titulo = curso.titulo;
     this.link = `https://www.youtube.com/watch?v=${curso.link}`;

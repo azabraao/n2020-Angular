@@ -1,4 +1,4 @@
-.novo-video-page {
+.novo-curso-page {
   background-image: url(./images/forma.svg);
   background-repeat: no-repeat;
   background-position: 0px 100px;
@@ -7,13 +7,13 @@
   height: 100%;
 }
 
-.novo-video-page__header {
+.novo-curso-page__header {
   padding-top: 70px;
 
-  .novo-video-header__inside {
+  .novo-curso-header__inside {
     margin-bottom: 30px;
 
-    .novo-video-header__logo {
+    .novo-curso-header__logo {
       font-family: Poppins, sans-serif;
       font-size: 48px;
       text-align: center;
@@ -22,9 +22,9 @@
   }
 }
 
-.novo-video {
-  .novo-video__inside {
-    .novo-video__header {
+.novo-curso {
+  .novo-curso__inside {
+    .novo-curso__header {
       margin-bottom: 31px;
 
       h1 {
@@ -33,7 +33,7 @@
         line-height: 30px;
       }
     }
-    .novo-video__body {
+    .novo-curso__body {
       max-width: 400px;
       margin: 0 auto;
 
