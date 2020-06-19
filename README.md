@@ -9,6 +9,8 @@ Geovanne Amorim - Rm82578 \
 Nícolas Nunes - Rm82331 \
 Iago Monteiro Garcia - RM82448
 
+[Veja o app publicado](https://comousa.netlify.app/lp)
+
 ## Iniciar app:
 
 `ng serve`
