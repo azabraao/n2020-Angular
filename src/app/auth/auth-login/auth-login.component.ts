@@ -38,13 +38,12 @@ export class AuthLoginComponent implements OnInit {
         let formValue = this.loginForm.value;
         let res = await this.authService.login(formValue);
 
-        this.authService.setLoggedUser(res.token, res.user);
-
         if (res.erro) {
           this.formFeedback = res.erro.message;
+        } else {
+          this.authService.setLoggedUser(res.token, res.user);
+          this.router.navigate(["/"]);
         }
-
-        this.router.navigate(["/"]);
       } catch (error) {
         console.error(error);
         this.formFeedback = "Credenciais negadas";
