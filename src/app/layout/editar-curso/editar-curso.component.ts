@@ -120,6 +120,7 @@ export class EditarCursoComponent implements OnInit {
           .updateCurso(formValue, this.idCurso)
           .then((res) => {
             alert("Curso atualizado com sucesso");
+            this.router.navigate(["/"]);
           })
           .catch(console.error);
 
@@ -167,10 +168,9 @@ export class EditarCursoComponent implements OnInit {
         .deleteCurso(this.idCurso)
         .then((res) => {
           alert("Curso deletado com sucesso");
+          this.router.navigate(["/"]);
         })
         .catch(console.error);
-
-      this.router.navigate(["/admin"]);
     } catch (error) {
       console.error(error);
     }
