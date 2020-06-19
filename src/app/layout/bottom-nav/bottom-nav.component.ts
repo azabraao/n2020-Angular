@@ -8,6 +8,7 @@ import { Router } from "@angular/router";
 })
 export class BottomNavComponent implements OnInit {
   public actualVideo: string = localStorage.videoId;
+  public actualVideoTitle: string = localStorage.videoTitle;
 
   constructor(private router: Router) {}
 
