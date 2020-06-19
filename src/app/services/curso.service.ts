@@ -5,7 +5,7 @@ import { HttpClient } from "@angular/common/http";
   providedIn: "root",
 })
 export class CursoService {
-  private apiUrl: string = "http://como-usa-backend.herokuapp.com";
+  private apiUrl: string = "https://como-usa-backend.herokuapp.com";
 
   constructor(private httpClient: HttpClient) {}
 
