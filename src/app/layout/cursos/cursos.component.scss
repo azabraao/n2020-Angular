@@ -43,9 +43,33 @@
       border-radius: 10px;
       overflow: hidden;
       text-decoration: none;
+      position: relative;
 
       @media only screen and (min-width: 1200px) {
         width: 260px;
+      }
+
+      &:hover {
+        .curso__editar {
+          display: block;
+        }
+      }
+
+      .curso__editar {
+        display: none;
+        position: absolute;
+        background: #ffffff;
+        border-radius: 3px;
+        top: 2px;
+        right: 2px;
+        border-radius: 9px;
+        padding: 2px 9px;
+        color: #000;
+        font-size: 14px;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
 
       .curso__cover {

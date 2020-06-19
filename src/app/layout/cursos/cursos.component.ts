@@ -9,6 +9,7 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class CursosComponent implements OnInit {
   public cursos: any = [];
+  public isAdmin: boolean = !!localStorage.userToken;
 
   constructor(
     public cursoService: CursoService,
@@ -16,7 +17,6 @@ export class CursosComponent implements OnInit {
   ) {}
 
   async ngOnInit() {
-    console.log(this.route.snapshot.params);
     try {
       this.cursos = await this.cursoService.getCursos();
     } catch (error) {

@@ -6,6 +6,7 @@ import { HomeComponent } from "./layout/home/home.component";
 import { NovoVideoComponent } from "./layout/novo-video/novo-video.component";
 import { AuthGuard } from "./services/auth.guard";
 import { CursoComponent } from "./layout/curso/curso.component";
+import { EditarVideoComponent } from "./layout/editar-video/editar-video.component";
 
 const routes: Routes = [
   {
@@ -16,6 +17,11 @@ const routes: Routes = [
     path: "novo-video",
     canActivate: [AuthGuard],
     component: NovoVideoComponent,
+  },
+  {
+    path: "editar-video/:id",
+    canActivate: [AuthGuard],
+    component: EditarVideoComponent,
   },
 
   {

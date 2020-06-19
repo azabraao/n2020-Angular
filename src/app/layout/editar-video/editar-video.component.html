@@ -1,0 +1,86 @@
+<div class="editar-video-page">
+  <header class="editar-video-page__header">
+    <div class="container">
+      <div class="editar-video-header__inside">
+        <div class="editar-video-header__logo">
+          ComoUSA
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="editar-video">
+    <div class="container">
+      <div class="editar-video__inside">
+        <div class="editar-video__header">
+          <h1>Editar curso</h1>
+        </div>
+        <div class="editar-video__body">
+          <form [formGroup]="editarVideoForm" class="form">
+            <div
+              class="add-image jsAddImagem"
+              [style.backgroundImage]="'url(' + foto + ')'"
+              (click)="handleAddImageClick()"
+              tabindex="0"
+            >
+              <input
+                type="file"
+                (change)="handleImageChange($event)"
+                class="add-image-file-input jsInputUploadImagem"
+                id=""
+                accept="image/*"
+              />
+              <div *ngIf="!foto" class="add-image__title jsImageTitle">
+                <p>Clique para atualizar a imagem</p>
+              </div>
+            </div>
+            <div class="form-group">
+              <input
+                class="input"
+                formControlName="link"
+                type="text"
+                (change)="handleLinkChange($event)"
+                placeholder="Insira um link"
+                value="{{ link }}"
+              />
+              <small *ngIf="getFieldError('link')" class="error">{{
+                getFieldError("link")
+              }}</small>
+            </div>
+            <div class="form-group">
+              <input
+                class="input"
+                type="titulo"
+                placeholder="Título"
+                (change)="handleTituloChange($event)"
+                formControlName="titulo"
+                value="{{ titulo }}"
+              />
+              <small *ngIf="getFieldError('titulo')" class="error">{{
+                getFieldError("titulo")
+              }}</small>
+            </div>
+            <div *ngIf="formFeedback" class="form__feedback">
+              {{ formFeedback }}
+            </div>
+            <button
+              disabled
+              *ngIf="isLoading"
+              class="button"
+              (click)="updateVideo()"
+            >
+              Salvando...
+            </button>
+            <button *ngIf="!isLoading" class="button" (click)="updateVideo()">
+              Salvar
+            </button>
+            <div class="editar-video__danger">
+              <button class="button button--danger" (click)="deleteVideo()">
+                Deletar curso
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

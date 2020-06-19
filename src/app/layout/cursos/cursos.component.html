@@ -9,6 +9,12 @@
         href="/curso/{{ curso.link }}/{{ curso.titulo }}"
         class="curso"
       >
+        <a
+          *ngIf="isAdmin"
+          href="/editar-video/{{ curso.id }}"
+          class="curso__editar"
+          >Editar</a
+        >
         <div
           class="curso__cover"
           [style.backgroundImage]="'url(' + curso.imagem + ')'"
