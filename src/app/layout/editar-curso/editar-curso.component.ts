@@ -4,11 +4,11 @@ import { Router, ActivatedRoute } from "@angular/router";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 
 @Component({
-  selector: "app-editar-video",
-  templateUrl: "./editar-video.component.html",
-  styleUrls: ["./editar-video.component.scss"],
+  selector: "app-editar-curso",
+  templateUrl: "./editar-curso.component.html",
+  styleUrls: ["./editar-curso.component.scss"],
 })
-export class EditarVideoComponent implements OnInit {
+export class EditarCursoComponent implements OnInit {
   public editarVideoForm: FormGroup;
   public data: any = {};
   public formFeedback: string = "";

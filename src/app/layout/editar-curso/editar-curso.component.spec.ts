@@ -1,0 +1,24 @@
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+
+import { EditarCursoComponent } from "./editar-curso.component";
+
+describe("EditarVideoComponent", () => {
+  let component: EditarCursoComponent;
+  let fixture: ComponentFixture<EditarCursoComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [EditarCursoComponent],
+    }).compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(EditarCursoComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it("should create", () => {
+    expect(component).toBeTruthy();
+  });
+});

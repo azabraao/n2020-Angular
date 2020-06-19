@@ -1,4 +1,4 @@
-.editar-video-page {
+.editar-curso-page {
   background-image: url(./images/forma.svg);
   background-repeat: no-repeat;
   background-position: 0px 100px;
@@ -7,13 +7,13 @@
   height: 100%;
 }
 
-.editar-video-page__header {
+.editar-curso-page__header {
   padding-top: 70px;
 
-  .editar-video-header__inside {
+  .editar-curso-header__inside {
     margin-bottom: 30px;
 
-    .editar-video-header__logo {
+    .editar-curso-header__logo {
       font-family: Poppins, sans-serif;
       font-size: 48px;
       text-align: center;
@@ -22,7 +22,7 @@
   }
 }
 
-.editar-video {
+.editar-curso {
   .editar-video__inside {
     .editar-video__header {
       margin-bottom: 31px;

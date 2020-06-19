@@ -9,7 +9,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CursosComponent } from "./cursos/cursos.component";
 import { CursoComponent } from "./curso/curso.component";
 import { BottomNavComponent } from "./bottom-nav/bottom-nav.component";
-import { EditarVideoComponent } from "./editar-video/editar-video.component";
+import { EditarCursoComponent } from "./editar-curso/editar-curso.component";
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { EditarVideoComponent } from "./editar-video/editar-video.component";
     CursosComponent,
     CursoComponent,
     BottomNavComponent,
-    EditarVideoComponent,
+    EditarCursoComponent,
   ],
   imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
 })

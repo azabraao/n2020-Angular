@@ -6,7 +6,7 @@ import { HomeComponent } from "./layout/home/home.component";
 import { NovoCursoComponent } from "./layout/novo-curso/novo-curso.component";
 import { AuthGuard } from "./services/auth.guard";
 import { CursoComponent } from "./layout/curso/curso.component";
-import { EditarVideoComponent } from "./layout/editar-video/editar-video.component";
+import { EditarCursoComponent } from "./layout/editar-curso/editar-curso.component";
 
 const routes: Routes = [
   {
@@ -19,9 +19,9 @@ const routes: Routes = [
     component: NovoCursoComponent,
   },
   {
-    path: "editar-video/:id",
+    path: "editar-curso/:id",
     canActivate: [AuthGuard],
-    component: EditarVideoComponent,
+    component: EditarCursoComponent,
   },
 
   {
