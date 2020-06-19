@@ -7,6 +7,7 @@ import { NovoCursoComponent } from "./layout/novo-curso/novo-curso.component";
 import { AuthGuard } from "./services/auth.guard";
 import { CursoComponent } from "./layout/curso/curso.component";
 import { EditarCursoComponent } from "./layout/editar-curso/editar-curso.component";
+import { LandingPageComponent } from "./layout/landing-page/landing-page.component";
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
     path: "novo-curso",
     canActivate: [AuthGuard],
     component: NovoCursoComponent,
+  },
+  {
+    path: "lp",
+    component: LandingPageComponent,
   },
   {
     path: "editar-curso/:id",

@@ -10,6 +10,7 @@ import { CursosComponent } from "./cursos/cursos.component";
 import { CursoComponent } from "./curso/curso.component";
 import { BottomNavComponent } from "./bottom-nav/bottom-nav.component";
 import { EditarCursoComponent } from "./editar-curso/editar-curso.component";
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { EditarCursoComponent } from "./editar-curso/editar-curso.component";
     CursoComponent,
     BottomNavComponent,
     EditarCursoComponent,
+    LandingPageComponent,
   ],
   imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
 })
